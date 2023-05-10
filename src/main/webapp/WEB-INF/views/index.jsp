@@ -6,8 +6,10 @@
 <meta charset="UTF-8">
 <title>**MY PROFILE HOME**</title>
 <link rel="stylesheet" href="/resources/css/title.css">
+<link rel="stylesheet" href="/resources/css/header.css">
 </head>
 <body>
+	<%@ include file="include/header.jsp" %>
 	<center>
 	<table border="0" cellspacing="0" cellpadding="20" width="75%">
 		<tr>
