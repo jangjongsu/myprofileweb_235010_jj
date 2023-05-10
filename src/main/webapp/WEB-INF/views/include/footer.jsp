@@ -12,10 +12,10 @@
 			<td class="marginline">&nbsp;</td>		
 		</tr>
 		<tr>
-			<td class="footertext">아래 설명글</td>
+			<td class="footertext">This homepage was created by Jang Jongsu</td>
 		</tr>
 		<tr>
-			<td class="footertext">아래 설명글</td>
+			<td class="footertext">If you want to talk to Jang Jongsu, please contact me</td>
 		</tr>
 	</table>
 </body>

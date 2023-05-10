@@ -6,9 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WebController {
 	
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/index")
 	public String index() {
 		return "index";
+	}
+	@RequestMapping(value = "/login")
+	public String login() {
+		return "login";
+	}
+	@RequestMapping(value = "/join")
+	public String join() {
+		return "join";
 	}
 
 }
