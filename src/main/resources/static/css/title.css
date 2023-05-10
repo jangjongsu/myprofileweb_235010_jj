@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+ span.title01 {
+ 	font-size: 70px;
+ 	color: #867070;
+ 	font-family: arial;
+ 	font-weight: bold;
+ }
+  span.title02 {
+ 	font-size: 20px;
+ 	color: #E4D0D0;
+ 	font-family: arial;
+ 	font-weight: normal;
+ }
+ span.skilltext01 {
+ 	font-size: 50px;
+ 	color: #867070;
+ 	font-family: arial;
+ 	font-weight: normal;
+ }
+ span.skilltext02 {
+ 	font-size: 30px;
+ 	color: #E4D0D0;
+ 	font-family: arial;
+ 	font-weight: normal;
+ }
+ td.titlbox {
+ 	text-align: center;
+ }
+ td.skillbox{
+ 	background-color: #F5EBEB;
+ }
+ td.imgbox{
+ 	background-color: #867070;
+ 	text-align: center;
+ }
