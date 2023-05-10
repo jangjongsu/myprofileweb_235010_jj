@@ -7,6 +7,7 @@
 <title>**MY PROFILE HOME**</title>
 <link rel="stylesheet" href="/resources/css/title.css">
 <link rel="stylesheet" href="/resources/css/header.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
@@ -28,7 +29,7 @@
 				<table border="0" cellspacing="0" cellpadding="10" width="80%">
 					<tr>
 						<td class="skillbox"><span class="skilltext01">J</span><span class="skilltext02">AVA</span></td>
-						<td rowspan="6" class="imgbox"><img alt="프로필 사진" src="/resources/img/호랑이.jpg" width="700"></td>
+						<td rowspan="6" class="imgbox"><img alt="프로필 사진" src="/resources/img/풍산개.jpg" width="700"></td>
 					</tr>
 					<tr>
 						<td class="skillbox"><span class="skilltext01">J</span><span class="skilltext02">SP</span></td>
@@ -51,5 +52,6 @@
 		</tr>
 	</table>
 	</center>
+	<%@ include file="include/footer.jsp" %>
 </body>
 </html>

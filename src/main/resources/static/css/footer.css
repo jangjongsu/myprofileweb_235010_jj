@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+td.marginline{
+	height: 60px;
+}
+td.footertext{
+	font-size: 16px;
+	font-family: Arial;
+ 	text-align: center;
+ 	color: #F5EBEB;
+ 	background-color: #867070;
+ 	padding: 5px 0 5px 0; 
+}

@@ -16,16 +16,18 @@
  	font-weight: normal;
  }
  span.skilltext01 {
- 	font-size: 50px;
+ 	font-size: 60px;
  	color: #867070;
  	font-family: arial;
  	font-weight: normal;
+ 	font-weight: bold;
  }
  span.skilltext02 {
- 	font-size: 30px;
+ 	font-size: 40px;
  	color: #E4D0D0;
  	font-family: arial;
  	font-weight: normal;
+ 	font-weight: bold;
  }
  td.titlbox {
  	text-align: center;
