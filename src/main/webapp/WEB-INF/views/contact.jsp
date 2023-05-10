@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>**MY PROFILE HOME**</title>
+<title>로그인</title>
 <link rel="stylesheet" href="/resources/css/title.css">
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
 <link rel="stylesheet" href="/resources/css/content.css">
-
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
@@ -30,23 +29,17 @@
 			<center>
 				<table border="0" cellspacing="0" cellpadding="10" width="80%">
 					<tr>
-						<td class="skillbox"><span class="skilltext01">J</span><span class="skilltext02">AVA</span></td>
-						<td rowspan="6" class="imgbox"><img alt="프로필 사진" src="/resources/img/풍산개.jpg" width="700"></td>
-					</tr>
-					<tr>
-						<td class="skillbox"><span class="skilltext01">J</span><span class="skilltext02">SP</span></td>
-					</tr>
-					<tr>
-						<td class="skillbox"><span class="skilltext01">S</span><span class="skilltext02">PRING BOOT</span></td>
-					</tr>
-					<tr>
-						<td class="skillbox"><span class="skilltext01">J</span><span class="skilltext02">AVASCRIPT</span></td>
-					</tr>
-					<tr>
-						<td class="skillbox"><span class="skilltext01">H</span><span class="skilltext02">TML5</span></td>
-					</tr>
-					<tr>
-						<td class="skillbox"><span class="skilltext01">D</span><span class="skilltext02">ATABASE</span></td>
+						<td class="contentbox">
+							<center>
+								<table  border="0" cellspacing="0" cellpadding="10">
+									<tr>
+										<td class="main_text">
+											연락을 원하시는 분은 아래의 연락처로 연락주세요
+										</td>
+									</tr>
+								</table>
+							</center>
+						</td>
 					</tr>
 				</table>
 				</center>

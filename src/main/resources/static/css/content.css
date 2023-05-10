@@ -11,6 +11,21 @@ td.contentbox{
  	color: #867070;
  	text-align: right;
  }
+ textarea.textareabox{
+ 	border: 1px solid #867070;
+ 	background-color: #ffffff;
+ 	width : 250px;
+ 	font-family: arial;
+ 	font-size: 20px;
+ 	color:#867070;
+ 	padding: 5px;
+ }
+ td.main_text{
+ 	text-align: left;
+ 	font-size: 20px;
+ 	font-family: HMKMRHD;
+ 	font-weight: bold;
+ }
  input.inputbox01{
  	border: 1px solid #867070;
  	background-color: #ffffff;
@@ -39,4 +54,17 @@ input.contentbtn01:hover{
 	font-weight: bold;
 	padding: 5px;
 	cursor: pointer;
+}
+a:link{
+	text-decoration: none;
+}
+a:visited{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: inherit;
+	
 }

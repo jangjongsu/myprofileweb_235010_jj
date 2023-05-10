@@ -18,5 +18,17 @@ public class WebController {
 	public String join() {
 		return "join";
 	}
+	@RequestMapping(value = "/profile")
+	public String profile() {
+		return "profile";
+	}
+	@RequestMapping(value = "/contact")
+	public String contact() {
+		return "contact";
+	}
+	@RequestMapping(value = "/question")
+	public String question() {
+		return "question";
+	}
 
 }
