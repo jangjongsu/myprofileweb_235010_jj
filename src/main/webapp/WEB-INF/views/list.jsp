@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,11 +47,22 @@
 												</tr>
 													<c:forEach items="${boardDtos }" var="dto">
 														<tr>
-															<td class="content01">${dto.bnum }</th>
-															<td class="content01">${dto.bid }</th>
-															<td class="content01">${dto.bname }</th>
-															<td class="content02">${dto.bcontent }</th>
-															<td class="content01">${dto.bdate }</th>
+															<td class="content01">${dto.bnum }</td>
+															<td class="content01">${dto.bid }</td>
+															<td class="content01">${dto.bname }</td>
+															<td class="content02">
+																<c:choose>
+																	<c:when test="${fn:length(dto.bcontent) > 30 }">
+																		<c:out value="${fn:substring(dto.bcontent,0,19) }"></c:out>...
+																	</c:when>
+																	<c:otherwise>
+																	 	<c:out value="${dto.bcontent }"></c:out>
+																	</c:otherwise>
+																</c:choose>
+															</td>
+															<td class="content01">
+																<c:out value="${fn:substring(dto.bdate,0, 10) }"></c:out>	
+															</td>
 														</tr>
 													</c:forEach>
 											</table>
