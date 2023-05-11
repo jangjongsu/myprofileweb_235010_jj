@@ -41,7 +41,20 @@ public class WebController {
 		return "contact";
 	}
 	@RequestMapping(value = "/question")
-	public String question() {
+	public String question(HttpServletRequest request, Model model, HttpSession session) {
+		
+		String sessionId =  (String)session.getAttribute("sessionId");
+		
+		MemberDto dto = new MemberDto("GUEST"," ","비회원"," "," ");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		if (sessionId == null){
+			model.addAttribute("memberDto", dto);
+		}else {	
+			model.addAttribute("memberDto", dao.getMemberDto(sessionId));
+		}
+		
 		return "question";
 	}
 	@RequestMapping(value = "/joinOk")
