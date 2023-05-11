@@ -166,4 +166,24 @@ public String list(Model model) {
 	
 	return"list";
 	}
+@RequestMapping(value = "/contentView")
+public String contentView(HttpServletRequest request, Model model) {
+	
+	IDao dao = sqlSession.getMapper(IDao.class);
+	
+	BoardDto dto = dao.contentViewDao(request.getParameter("bnum"));
+	
+	model.addAttribute("boardDto", dto);
+	
+	return"contentView";
+	}
+@RequestMapping(value = "/delete")
+public String delete(HttpServletRequest request) {
+	
+	IDao dao = sqlSession.getMapper(IDao.class);
+	
+	dao.deleteDao(request.getParameter("bnum"));
+
+	return "redirect:list";
+	}
 }

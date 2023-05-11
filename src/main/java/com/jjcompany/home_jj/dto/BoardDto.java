@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardDto {
-	private int bnum;
+	private String bnum;
 	private String bid;
 	private String bname;
 	private String bcontent;
