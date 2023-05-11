@@ -58,7 +58,7 @@ public class WebController {
 		return "question";
 	}
 	@RequestMapping(value = "/joinOk")
-	public String joinoK(HttpServletRequest request, Model model) {
+	public String joinoK(HttpServletRequest request, Model model) { 
 		
 		String mid = request.getParameter("mid");
 		String mpw= request.getParameter("mpw");
