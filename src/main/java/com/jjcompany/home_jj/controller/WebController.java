@@ -1,5 +1,7 @@
 package com.jjcompany.home_jj.controller;
 
+import java.net.http.HttpRequest;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -92,5 +94,41 @@ public class WebController {
 		
 		return "loginOk";
 	}
+	@RequestMapping(value = "/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();//세션 삭제
+		return "redirect:login";
+	}
+	@RequestMapping(value = "/modify")
+	public String modify(HttpSession session, Model model, HttpServletRequest request) {
+		
+		String sessionId =  (String)session.getAttribute("sessionId");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		model.addAttribute("memberDto", dao.getMemberDto(sessionId));
+		
+		return "modifyForm";
+	}
+	@RequestMapping(value = "/modifyOk")
+	public String modifyOk(Model model, HttpServletRequest request) {
+		
+		String mid = request.getParameter("mid");
+		String mpw = request.getParameter("mpw");
+		String mname = request.getParameter("mname");
+		String memail = request.getParameter("memail");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		dao.modifyMemberDao(mid, mpw, mname, memail);
+		
+		model.addAttribute("memberDto", dao.getMemberDto(mid)); // 수정의 된 후의 회원 정보
+		
+		
+		
+		
+		return "modifyOk";
+	}
+	
 
 }

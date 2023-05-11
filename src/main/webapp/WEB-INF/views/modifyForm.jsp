@@ -6,8 +6,10 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <link rel="stylesheet" href="/resources/css/title.css">
+<link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
 <link rel="stylesheet" href="/resources/css/content.css">
+<script type="text/javascript" src="/resources/js/join.js"></script>
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
@@ -31,19 +33,35 @@
 						<td class="contentbox">
 							<center>
 								<table  border="0" cellspacing="0" cellpadding="10">
-									<form action="loginOk" method="post">
+									<form action="modifyOk" method="post" name="join_frm">
 									<tr>
-										<td class= "contenttext">아 이 디   : </td>
-										<td><input class="inputbox01" type="text" name="mid"></td>
+										<td class= "contenttext">아 이 디 : </td>
+										<td><input class="inputbox01" type="text" name="mid" value="${memberDto.mid }" readonly="readonly"></td>
 									</tr>
 									<tr>
 										<td class= "contenttext">비밀번호 : </td>
 										<td><input class="inputbox01" type="password" name="mpw"></td>
 									</tr>
 									<tr>
+										<td class= "contenttext">비밀번호 확인 : </td>
+										<td><input class="inputbox01" type="password" name="mpw_check"></td>
+									</tr>
+									<tr>
+										<td class= "contenttext">이&nbsp;&nbsp;&nbsp;&nbsp;름 : </td>
+										<td><input class="inputbox01" type="text" name="mname" value="${memberDto.mname }"></td>
+									</tr>
+									<tr>
+										<td class= "contenttext">이 메 일 : </td>
+										<td><input class="inputbox01" type="text" name="memail" value="${memberDto.memail }"></td>
+									</tr>
+									<tr>
+										<td class= "contenttext">가 입 일 : </td>
+										<td><input class="inputbox01" type="text" name="mdate" value="${memberDto.mdate }" readonly="readonly"></td>
+									</tr>
+									<tr>
 										<td colspan="2" align="center">
-											<input class="contentbtn01" type="submit" value="로그인">&nbsp;
-											<input class="contentbtn01" type="button" value="회원가입" onclick="script:window.location.href='join'">
+											<input class="contentbtn01" type="button" value="수정완료" onclick="joinCheck()">&nbsp;
+											<input class="contentbtn01" type="button" value="수정취소" onclick="script:window.location.href='index'">
 										</td>
 									</tr>
 									</form>
