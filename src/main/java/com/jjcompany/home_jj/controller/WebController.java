@@ -1,6 +1,7 @@
 package com.jjcompany.home_jj.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jjcompany.home_jj.dao.IDao;
+import com.jjcompany.home_jj.dto.MemberDto;
 
 @Controller
 public class WebController {
@@ -67,11 +69,28 @@ public class WebController {
 		} else { // 회원가입 실패
 			model.addAttribute("joinFlag", joinCheck);
 		}
-		
-		
-		
-		
+
 		return "joinOk";
+	}
+	
+	@RequestMapping(value = "/loginOk")
+	public String loginOk(HttpServletRequest request, Model model, HttpSession session, MemberDto memberDto) {
+		
+		String mid = request.getParameter("mid");
+		String mpw = request.getParameter("mpw");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		int checkIdPwFlag = dao.checkIdPwDao(mid, mpw);
+		
+		model.addAttribute("checkIdPwFlag", checkIdPwFlag);
+		
+		if(checkIdPwFlag == 1) {
+			session.setAttribute("sessionId", mid);
+			model.addAttribute("memberDto", dao.getMemberDto(mid));
+		}
+		
+		return "loginOk";
 	}
 
 }

@@ -9,9 +9,20 @@
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
 <link rel="stylesheet" href="/resources/css/content.css">
-<script type="text/javascript" src="/resources/js/join.js"></script>
 </head>
 <body>
+		<%
+		int checkIdPwFlag = Integer.parseInt(request.getAttribute("checkIdPwFlag").toString());
+
+		if(checkIdPwFlag == 0){
+		%>
+		<script type="text/javascript">
+			alert("입력하신 아이디 또는 비밀번호가 일치하지 않습니다. 다시입력해주세요");
+			history.go(-1);
+		</script>	
+		<%
+		}
+		%>
 	<%@ include file="include/header.jsp" %>
 	<center>
 	<table border="0" cellspacing="0" cellpadding="20" width="75%">
@@ -33,34 +44,13 @@
 						<td class="contentbox">
 							<center>
 								<table  border="0" cellspacing="0" cellpadding="10">
-									<form action="joinOk" method="post" name="join_frm">
 									<tr>
-										<td class= "contenttext">아 이 디 : </td>
-										<td><input class="inputbox01" type="text" name="mid"></td>
-									</tr>
-									<tr>
-										<td class= "contenttext">비밀번호 : </td>
-										<td><input class="inputbox01" type="password" name="mpw"></td>
-									</tr>
-									<tr>
-										<td class= "contenttext">비밀번호 확인 : </td>
-										<td><input class="inputbox01" type="password" name="mpw_check"></td>
-									</tr>
-									<tr>
-										<td class= "contenttext">이&nbsp;&nbsp;&nbsp;&nbsp;름 : </td>
-										<td><input class="inputbox01" type="text" name="mname"></td>
-									</tr>
-									<tr>
-										<td class= "contenttext">이 메 일 : </td>
-										<td><input class="inputbox01" type="text" name="memail"></td>
-									</tr>
-									<tr>
-										<td colspan="2" align="center">
-											<input class="contentbtn01" type="button" value="회원가입" onclick="joinCheck()">&nbsp;
-											<input class="contentbtn01" type="button" value="로그인" onclick="script:window.location.href='login'">
+										<td class="main_text">
+											${memberDto.mname }님 로그인 하셨습니다 반갑습니다.<br>
+											${memberDto.mid }님의 가입일은 ${memberDto.mdate } 입니다.<br>
+											<input class="contentbtn01" type="button" value="로그아웃" onclick="script:window.location.href='login'">
 										</td>
 									</tr>
-									</form>
 								</table>
 							</center>
 						</td>
