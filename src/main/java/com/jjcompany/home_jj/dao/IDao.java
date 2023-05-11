@@ -1,5 +1,8 @@
 package com.jjcompany.home_jj.dao;
 
+import java.util.List;
+
+import com.jjcompany.home_jj.dto.BoardDto;
 import com.jjcompany.home_jj.dto.MemberDto;
 
 public interface IDao {
@@ -11,5 +14,8 @@ public interface IDao {
 	public MemberDto getMemberDto(String mid); //아이디로 조회하여 회원정보 모두 가져오기
 	public int modifyMemberDao(String mid, String mpw, String mname, String memail);
 	
-
+	//게시판관리
+	public void questionWriteDao(String bid, String bname, String bcontent, String bemail);
+	public List<BoardDto> questionListDao(); //모든 글목록 가져오기
+	
 }

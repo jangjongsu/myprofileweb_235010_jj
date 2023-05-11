@@ -32,7 +32,7 @@
 						<td class="contentbox">
 							<center>
 								<table  border="0" cellspacing="0" cellpadding="10">
-									<form action="joinOk" method="post">
+									<form action="questionOk">
 									<tr>
 										<td class= "contenttext">아 이 디 : </td>
 										<td><input class="inputbox01" type="text" name="bid" value="${memberDto.mid }" readonly="readonly"></td>

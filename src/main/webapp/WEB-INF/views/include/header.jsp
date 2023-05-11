@@ -61,7 +61,7 @@
 		<%
 			}else{
 		%>
-			<td colspan="15" align="right"><b><c:out value="${sessionId }" /></b>님 로그인중 입니다. </td>
+			<td colspan="15" align="right"><b class ="sessiontext"><c:out value="${sessionId }" />님 로그인중 입니다. </b></td>
 		<%
 			}
 		%>

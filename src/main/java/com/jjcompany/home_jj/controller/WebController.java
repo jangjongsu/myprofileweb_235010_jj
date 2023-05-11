@@ -1,6 +1,7 @@
 package com.jjcompany.home_jj.controller;
 
 import java.net.http.HttpRequest;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jjcompany.home_jj.dao.IDao;
+import com.jjcompany.home_jj.dto.BoardDto;
 import com.jjcompany.home_jj.dto.MemberDto;
 
 @Controller
@@ -137,11 +139,31 @@ public class WebController {
 		
 		model.addAttribute("memberDto", dao.getMemberDto(mid)); // 수정의 된 후의 회원 정보
 		
-		
-		
-		
 		return "modifyOk";
 	}
+@RequestMapping(value = "/questionOk")
+public String questionOk(HttpServletRequest request) {
 	
-
+	String bid = request.getParameter("bid");
+	String bname = request.getParameter("bname");
+	String bcontent = request.getParameter("bcontent");
+	String bemail = request.getParameter("bemail");
+	
+	IDao dao = sqlSession.getMapper(IDao.class);
+	
+	dao.questionWriteDao(bid, bname, bcontent, bemail);
+	
+	return "redirect:list";
+	}
+@RequestMapping(value = "/list")
+public String list(Model model) {
+	
+	IDao dao = sqlSession.getMapper(IDao.class);
+	
+	List<BoardDto> dtos = dao.questionListDao();
+	
+	model.addAttribute("boardDtos", dtos);
+	
+	return"list";
+	}
 }

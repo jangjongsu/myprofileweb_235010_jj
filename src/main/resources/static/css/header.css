@@ -25,4 +25,9 @@
  tr.marginline{
  	height: 40px;
  }
+ b.sessiontext{
+ 	font-size: 16px;
+ 	font-family: Arial;
+ 	color: #867070;
+ }
  
