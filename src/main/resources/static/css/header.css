@@ -30,4 +30,17 @@
  	font-family: Arial;
  	color: #867070;
  }
+ a:link{
+	text-decoration: none;
+}
+a:visited{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: inherit;
+	
+}
  
