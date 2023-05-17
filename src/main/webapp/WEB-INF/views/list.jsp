@@ -8,8 +8,6 @@
 <meta charset="UTF-8">
 <title>프로필</title>
 <link rel="stylesheet" href="/resources/css/title.css">
-<link rel="stylesheet" href="/resources/css/header.css">
-<link rel="stylesheet" href="/resources/css/footer.css">
 <link rel="stylesheet" href="/resources/css/content.css">
 <link rel="stylesheet" href="/resources/css/board.css">
 </head>
@@ -63,16 +61,37 @@
 																</a>
 															</td>
 															<td class="content01">
-																<c:out value="${fn:substring(dto.bdate,0, 10) }"></c:out>	
+																<c:out value="${fn:substring(dto.bdate,0, 10) }"></c:out>
 															</td>
 														</tr>
 													</c:forEach>
+													
 											</table>
 										</td>
 									</tr>
 									<tr>
 										<td colspan="5" align="right">
 											<input class="contentbtn01" type="button" value="글쓰기" onclick="script:window.location.href='question'">
+										</td>
+									</tr>
+									<tr>
+										<td colspan="5" align="center">
+											<c:if test="${pageMaker.prev }">
+												<a href="list?pageNum=${pageMaker.startPage-5 }">◀</a>&nbsp;&nbsp;&nbsp;
+											</c:if>
+										<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="num">
+											<c:choose>
+												<c:when test="${currPage == num}">
+													<span style="color:#FFFFFF;background-color: blue;;font-weight: bold;">${num}</span>&nbsp;&nbsp;&nbsp;
+												</c:when>
+												<c:otherwise>
+													<a href="list?pageNum=${num }">${num }</a>&nbsp;&nbsp;&nbsp;
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+											<c:if test="${pageMaker.next }">
+												<a href="list?pageNum=${pageMaker.startPage+5 }">▶</a>
+											</c:if>									
 										</td>
 									</tr>
 								</table>

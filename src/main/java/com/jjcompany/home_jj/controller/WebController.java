@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jjcompany.home_jj.dao.IDao;
 import com.jjcompany.home_jj.dto.BoardDto;
+import com.jjcompany.home_jj.dto.Criteria;
 import com.jjcompany.home_jj.dto.MemberDto;
+import com.jjcompany.home_jj.dto.PageDto;
 
 @Controller
 public class WebController {
@@ -156,13 +158,27 @@ public String questionOk(HttpServletRequest request) {
 	return "redirect:list";
 	}
 @RequestMapping(value = "/list")
-public String list(Model model) {
+public String list(Model model, Criteria criteria, HttpServletRequest request) {
+	
+	int pageNum=0;
+	if(request.getParameter("pageNum") == null) {
+		pageNum = 1;
+	}else {
+		pageNum = Integer.parseInt(request.getParameter("pageNum"));
+		criteria.setPageNum(pageNum);
+	}
 	
 	IDao dao = sqlSession.getMapper(IDao.class);
 	
-	List<BoardDto> dtos = dao.questionListDao();
+	int total = dao.boardAllCountDao();
 	
-	model.addAttribute("boardDtos", dtos);
+	PageDto pageDto = new PageDto(criteria, total);
+	
+	List<BoardDto> boardDtos = dao.questionListDao(criteria.getAmount(), pageNum);
+	
+	model.addAttribute("pageMaker", pageDto);
+	model.addAttribute("boardDtos", boardDtos);
+	model.addAttribute("currPage", pageNum);
 	
 	return"list";
 	}
