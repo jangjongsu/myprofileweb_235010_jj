@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/resources/css/title.css">
 <link rel="stylesheet" href="/resources/css/content.css">
 <link rel="stylesheet" href="/resources/css/board.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
